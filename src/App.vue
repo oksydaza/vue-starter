@@ -1,19 +1,19 @@
 <template>
   <div>
-    <h1>Witaj systemie zapisow na zajecia {{ email}}</h1>
-
-    <div> v-if="authenticatedUsername != ' '">
-      <h3>Jestes zalogowany jako: {{ authenticatedUsername}}</h3>
-      <a> @click="logMeOut()</a>
+    <h1>Witaj systemie zapisow na zajecia</h1>
+    <div v-if="authenticatedUsername != ' '">
+        <h3>Jestes zalogowany jako: {{ authenticatedUsername}}</h3>
+        <a @click="logMeOut()">Wyloguj</a>
     </div>
     <div v-else>
-      <input type="text" v-model="email">
-      <button @click="logMeIn()">Zaloguj</button>
+        <input type="text" v-model="email">
+        <button @click="logMeIn()">Zaloguj</button>
     </div>
   </div>
-  </template>
+</template>
 <script>
 import "milligram";
+
 export default {
   data() {
     return {
